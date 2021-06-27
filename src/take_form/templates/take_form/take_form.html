@@ -1,0 +1,8 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+  <h1>Je Recupere</h1>
+  <p>{{ object.thumb }}</p>
+  <p>{{ object.name }}</p>
+  {{ take.as_p }}  
+  <input type="submit" value="Envoyer">
+{% endblock %}

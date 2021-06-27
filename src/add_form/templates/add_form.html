@@ -1,0 +1,9 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+  <h1>J'ai Trouve</h1>
+  <form class="form-add_element" action="{% url 'add_form:create_form' %}" method="post">
+    {% csrf_token %}
+    {{ add_form }}
+    <input type="submit" value="Envoyer">
+  </form>
+{% endblock %}

@@ -11,6 +11,9 @@ class Profile(models.Model):
     numero_de_chambre = models.CharField(max_length=3)
     genre = models.CharField(max_length=1, choices=[('M', 'Masculin'), ('F', 'Feminin'), ('A', 'Autre')])
 
+    def __str__(self):
+        return self.user.name
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

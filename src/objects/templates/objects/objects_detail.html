@@ -1,0 +1,7 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+  <h1>Details</h1>
+  <img src={{ object.thumb.url }}> 
+  <p>{{ object.name }}</p>
+  <a href="/take_form/{{ object.id }}"> Retirer </a> 
+{% endblock %}

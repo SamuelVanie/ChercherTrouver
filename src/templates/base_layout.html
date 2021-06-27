@@ -1,3 +1,4 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +10,7 @@
       <nav>
         <ul>
           <li>
-            <form class="logout-link" action= method="POST">
+            <form class="logout-link" action = {% url 'accounts:accouts_logout' %} method="POST">
               {% csrf_token %}
               <button type="submit">Logout</button>
             </form>

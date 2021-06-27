@@ -1,0 +1,10 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+  <h1>Page Principale</h1>
+  {% for instance in objets %}
+  <p>
+  {{ instance.id }} - <a href="{{ instance.get_absolute_url }}">{{ instance.name }}</a>
+  </p>
+  {% endfor %}
+
+{% endblock %}

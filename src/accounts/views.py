@@ -32,4 +32,4 @@ def accounts_login_view(request):
 def accounts_logout_view(request):
    if request.method == 'POST':
        logout(request)
-       # return redirect('objects:objects_list')
+       return redirect('objects:objects_list')
