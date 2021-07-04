@@ -12,7 +12,7 @@ def accounts_signup_view(request):
             user_form = user_form.save()
             profile_form.save()
             login(request, user_form)
-            # return redirect('objects:objects_list') after I'll create my objects
+            return redirect('objects:objects_list')     
     else:
         user_form = UserCustomForm(request.POST, instance=request.user)
         profile_form = UserProfileForm(request.POST, instance=request.user.profile)
@@ -25,6 +25,7 @@ def accounts_login_view(request):
        if form.is_valid():
             user = form.get_user()
             login(request, user)
+            redirect('objects:objects_list')
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/accounts_login.html', {'form':form})

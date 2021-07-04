@@ -12,7 +12,7 @@ class Profile(models.Model):
     genre = models.CharField(max_length=1, choices=[('M', 'Masculin'), ('F', 'Feminin'), ('A', 'Autre')])
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
 
 
 @receiver(post_save, sender=User)

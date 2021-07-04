@@ -1,9 +1,13 @@
 {% extends 'base_layout.html' %}
 {% block content %}
   <h1>Log In</h1>
-  <form class="form-signup" action="{% url 'accounts:accounts_login' %}" method="post">
+  <form class="form-signin" action="{% url 'accounts:accounts_login' %}" method="POST">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="SignUp">
+    <input type="submit" value="SignIn">
   </form>
+  <a class="btn_signup" href='{% url 'accounts:accounts_signup' %}'>
+        <button>SignUp</button>
+  </a>
+
 {% endblock %}

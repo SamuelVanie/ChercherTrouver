@@ -1,0 +1,23 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>ChercherTrouver</title>
+  </head>
+  <body>
+    <header>
+      <p>ChercherTrouver</p>
+    </header>
+    <div class="wrapper">
+      <h1>Page Accueil</h1>
+      <p>ChercherTrouver est une application cree par Samuel Michael Vanie, Sanoko Alassane, </br>
+        Ojo Victory, Kone Moussa et Diomande Sai pour gerer les differents objets perdus a l'INP-HB</br>
+        de Yamoussoukro vu les difficultes que les etudiants ont a retrouver leurs biens. Cette plateforme</br>
+        a ete mise en place pour concentrer l'information en un seul endroit.
+      </p>
+      <a class="btn_continuer" href='{% url 'accounts:accounts_login' %}'>
+        <button>Continuer</button>
+      </a>
+    </div>
+  </body>

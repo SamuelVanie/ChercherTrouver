@@ -10,10 +10,16 @@
       <nav>
         <ul>
           <li>
-            <form class="logout-link" action = {% url 'accounts:accouts_logout' %} method="POST">
-              {% csrf_token %}
-              <button type="submit">Logout</button>
-            </form>
+            <p>ChercherTrouver</p>
+            {% if user.is_authenticated %}
+              <form class="logout-link" action = {% url 'accounts:accounts_logout' %} method="POST">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+              </form>
+            {% else %}
+              <li><a href="{% url 'accounts:accounts_login'%}">Login</a></li>
+              <li><a href="{% url 'accounts:accounts_signup' %}">SignUp</a></li>
+            {% endif %}
           </li>
         </ul>
       </nav>

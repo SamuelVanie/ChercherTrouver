@@ -18,8 +18,10 @@ from django.urls import path,include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
 
 urlpatterns = [
+    path('', views.page_accueil_view),
     path('accounts/', include('accounts.urls')),
     path('add_form/', include('add_form.urls')),
     path('take_form/', include('take_form.urls')),
