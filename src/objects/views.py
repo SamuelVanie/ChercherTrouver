@@ -8,8 +8,8 @@ def object_list_view(request):
     context = {'objets':objets}
     return render(request, 'objects/object_list.html', context)
 
-def object_detail_view(request, my_id):
-    obj = get_object_or_404(objetPerdu, id=my_id)
+def object_detail_view(request, id):
+    obj = get_object_or_404(objetPerdu, id=id)
     context = {
             'object':obj,
     }

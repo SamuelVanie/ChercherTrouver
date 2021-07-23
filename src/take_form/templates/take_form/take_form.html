@@ -1,8 +1,11 @@
 {% extends 'base_layout.html' %}
 {% block content %}
   <h1>Je Recupere</h1>
-  <p>{{ object.thumb }}</p>
+  <img src={{ object.thumb.url }}>
   <p>{{ object.name }}</p>
-  {{ take.as_p }}  
-  <input type="submit" value="Envoyer">
+  <form class="take_form" method="post" action="{% url 'take_form:take_form' object.id %}">
+    {% csrf_token %}
+    {{ take }}  
+    <input type="submit" value="Envoyer">
+  </form>
 {% endblock %}

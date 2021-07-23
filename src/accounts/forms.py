@@ -8,7 +8,7 @@ from .models import Profile
 class UserCustomForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username','email']
+        fields = ['username','password', 'email']
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
