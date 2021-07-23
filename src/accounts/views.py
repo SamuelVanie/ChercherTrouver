@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def accounts_signup_view(request):
     if request.method == 'POST':
-        user_form = UserCustomForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
+        user_form = UserCustomForm(request.POST or None)
+        profile_form = UserProfileForm(request.POST or None)
         if user_form.is_valid() and profile_form.is_valid():
             user_form = user_form.save()
             profile_form.save(commit=False)
@@ -17,8 +17,8 @@ def accounts_signup_view(request):
             login(request, user_form)
             return redirect('objects:objects_list')     
     else:
-        user_form = UserCustomForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
+        user_form = UserCustomForm()
+        profile_form = UserProfileForm()
     return render(request, 'accounts/accounts_signup.html', {'user_form':user_form, 'profile_form':profile_form})
 
 

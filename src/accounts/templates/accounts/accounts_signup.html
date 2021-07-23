@@ -4,6 +4,7 @@
   <h1>SignUp</h1>
   <form class="form-signup" action="{% url 'accounts:accounts_signup' %}" method="post">
     {% csrf_token %}
+    {% csrf_token %}
     {{ user_form }}
     {{ profile_form }}
     <input type="submit" value="SignUp">

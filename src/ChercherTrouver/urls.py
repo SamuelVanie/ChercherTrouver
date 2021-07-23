@@ -23,8 +23,6 @@ from . import views
 urlpatterns = [
     path('', views.page_accueil_view),
     path('accounts/', include('accounts.urls')),
-    path('add_form/', include('add_form.urls')),
-    path('take_form/', include('take_form.urls')),
     path('objects/', include('objects.urls')),
     path('admin/', admin.site.urls),
 ]
